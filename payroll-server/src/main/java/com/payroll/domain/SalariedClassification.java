@@ -14,4 +14,9 @@ public class SalariedClassification extends PaymentClassification {
     }
 
     private BigDecimal salary;
+
+    @Override
+    public BigDecimal calculatePay(PayCheck payCheck) {
+        return salary;
+    }
 }

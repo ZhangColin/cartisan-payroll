@@ -1,6 +1,7 @@
 package com.payroll.domain;
 
 import lombok.Data;
+import lombok.Getter;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
@@ -8,10 +9,10 @@ import java.time.LocalDate;
 /**
  * 销售凭条
  */
-@Data
+@Getter
 public class SalesReceipt {
-    private LocalDate date;
-    private BigDecimal amount;
+    private final LocalDate date;
+    private final BigDecimal amount;
 
     public SalesReceipt(LocalDate date, BigDecimal amount) {
         this.date = date;

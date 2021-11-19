@@ -1,9 +1,6 @@
 package com.payroll.domain;
 
 import com.cartisan.util.SnowflakeIdWorker;
-import com.payroll.DirectDepositMethod;
-import com.payroll.MailMethod;
-import com.payroll.WeeklySchedule;
 
 import java.math.BigDecimal;
 
@@ -32,15 +29,15 @@ public class EmployeeFactory {
         employee.changeClassification(new HourlyClassification(hourlyRate), new WeeklySchedule());
     }
 
-    public Employee createCommissionedEmployee(String name, String address, BigDecimal salary, BigDecimal commissionRate) {
+    public Employee createCommissionedEmployee(String name, String address, BigDecimal baseRate, BigDecimal commissionRate) {
         return create(name, address,
-                new CommissionedClassification(salary, commissionRate),
+                new CommissionedClassification(baseRate, commissionRate),
                 new BiweeklySchedule(),
                 new HoldMethod());
     }
 
-    public void changeCommissioned(Employee employee, BigDecimal salary, BigDecimal commissionRate){
-        employee.changeClassification(new CommissionedClassification(salary, commissionRate), new BiweeklySchedule());
+    public void changeCommissioned(Employee employee, BigDecimal baseRate, BigDecimal commissionRate){
+        employee.changeClassification(new CommissionedClassification(baseRate, commissionRate), new BiweeklySchedule());
     }
 
     private Employee create(String name, String address,

@@ -1,6 +1,6 @@
-package com.payroll;
+package com.payroll.domain;
 
-import lombok.Data;
+import lombok.Getter;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
@@ -8,10 +8,10 @@ import java.time.LocalDate;
 /**
  * 服务费
  */
-@Data
+@Getter
 public class ServiceCharge {
-    private LocalDate date;
-    private BigDecimal amount;
+    private final LocalDate date;
+    private final BigDecimal amount;
 
     public ServiceCharge(LocalDate date, BigDecimal amount) {
         this.date = date;

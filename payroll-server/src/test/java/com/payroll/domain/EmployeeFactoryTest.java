@@ -1,8 +1,5 @@
 package com.payroll.domain;
 
-import com.payroll.DirectDepositMethod;
-import com.payroll.MailMethod;
-import com.payroll.WeeklySchedule;
 import org.junit.Test;
 
 import java.math.BigDecimal;
@@ -84,7 +81,7 @@ public class EmployeeFactoryTest {
 
         assertThat(employee.getClassification()).isInstanceOf(CommissionedClassification.class);
         CommissionedClassification commissionedClassification = (CommissionedClassification) employee.getClassification();
-        assertThat(commissionedClassification.getSalary()).isEqualTo(new BigDecimal("2500"));
+        assertThat(commissionedClassification.getBaseRate()).isEqualTo(new BigDecimal("2500"));
         assertThat(commissionedClassification.getCommissionRate()).isEqualTo(new BigDecimal("9.5"));
 
         assertThat(employee.getSchedule()).isInstanceOf(BiweeklySchedule.class);
@@ -103,7 +100,7 @@ public class EmployeeFactoryTest {
         // then
         assertThat(employee.getClassification()).isInstanceOf(CommissionedClassification.class);
         CommissionedClassification commissionedClassification = (CommissionedClassification) employee.getClassification();
-        assertThat(commissionedClassification.getSalary()).isEqualTo(new BigDecimal("2500"));
+        assertThat(commissionedClassification.getBaseRate()).isEqualTo(new BigDecimal("2500"));
         assertThat(commissionedClassification.getCommissionRate()).isEqualTo(new BigDecimal("9.5"));
 
         assertThat(employee.getSchedule()).isInstanceOf(BiweeklySchedule.class);

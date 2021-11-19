@@ -1,16 +1,16 @@
 package com.payroll.domain;
 
-import lombok.Data;
+import lombok.Getter;
 
 import java.time.LocalDate;
 
 /**
  * 考勤卡
  */
-@Data
+@Getter
 public class TimeCard {
-    private LocalDate date;
-    private double hours;
+    private final LocalDate date;
+    private final double hours;
 
     public TimeCard(LocalDate date, double hours) {
         this.date = date;

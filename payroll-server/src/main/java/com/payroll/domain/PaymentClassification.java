@@ -1,4 +1,7 @@
 package com.payroll.domain;
 
-public class PaymentClassification {
+import java.math.BigDecimal;
+
+public abstract class PaymentClassification {
+    public abstract BigDecimal calculatePay(PayCheck payCheck);
 }
